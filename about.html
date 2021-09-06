@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    <title>home page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .header-section {
+
+            background-color: #edf0ed;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #34eb49;
+            font-size: 1.4rem;
+
+            font-family: 'Bebas Neue', cursive;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #34eba4;
+            font-size: 1.35rem;
+            text-decoration: underline;
+        }
+
+        .links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            /* margin: auto 40px; */
+        }
+
+        li {
+            list-style: none;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #edf0ed;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+        .about {
+            margin-bottom: 20px;
+        }
+        .service-header {
+            font-family: 'Rampart One', cursive;
+            color: #3bbf5c;
+            text-align: center;
+            margin-top: 50px;
+            text-transform: uppercase;
+        }
+        .about-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+
+        .about-us .about-first {
+            width: 40%;
+
+        }
+
+        .about-first img {
+            background-color: #f0eded;
+            background-blend-mode: darken;
+            width: 100%;
+            height: 480px;
+
+        }
+
+        .about-us .about-second {
+            width: 40%;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: space-between;
+            flex-direction: column;
+            padding: 20px;
+
+        }
+
+        .inner-second {
+            width: 100%;
+            height: 100%;
+            margin: 25px 0;
+
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        .inner-second p {
+            text-align: left;
+            font: 20px;font-family: 'Slabo 27px', serif;
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width:850px) {
+            
+        
+        .links {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                transition: all 0.8s;
+                margin-left: auto;
+                margin-right: 20px;
+            }
+
+            nav {
+                padding: 15px;
+            }
+
+            .navlinks {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+        @media screen and (max-width:750px) {
+            .about-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        .about-us .about-first {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-first img {
+            background-color: #f0eded;
+            background-blend-mode: darken;
+            width: 100%;
+            height: 480px;
+
+        }
+
+        .about-us .about-second {
+            width: 100%;
+            height: auto;
+ 
+            flex-direction: column;
+            padding: 20px;
+
+        }
+
+        .inner-second {
+            width: 100%;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        .inner-second p {
+            text-align: left;
+            font: 20px;font-family: 'Slabo 27px', serif;
+            margin-left: 10px;
+        }
+           
+            
+        }
+        @media screen and (max-width: 730px){
+            .about-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 80vw;
+            margin:0 auto;
+        }
+
+        .about-us .about-first {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-first img {
+            background-color: #f0eded;
+            background-blend-mode: darken;
+            width: 100%;
+            height: 480px;
+
+        }
+
+        .about-us .about-second {
+            width: 100%;
+            height: auto;
+ 
+            flex-direction: column;
+            padding: 20px;
+
+        }
+
+        .inner-second {
+            width: 100%;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        .inner-second p {
+            text-align: left;
+            font: 20px;font-family: 'Slabo 27px', serif;
+            margin-left: 10px;
+        }
+           
+            
+        }
+        @media screen and (max-width:720px){
+            .about-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        .about-us .about-first {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-first img {
+            background-color: #f0eded;
+            background-blend-mode: darken;
+            width: 100%;
+            height: 480px;
+
+        }
+
+        .about-us .about-second {
+            width: 100%;
+            height: auto;
+ 
+            flex-direction: column;
+            padding: 20px;
+
+        }
+
+        .inner-second {
+            width: 100%;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        .inner-second p {
+            text-align: left;
+            font: 20px;font-family: 'Slabo 27px', serif;
+            margin-left: 10px;
+        }
+           
+            
+        }
+        @media screen and (max-width:500px) {
+            .about-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        .about-us .about-first {
+            width: 100%;
+            height: auto;
+        }
+
+        .about-first img {
+            background-color: #f0eded;
+            background-blend-mode: darken;
+            width: 100%;
+            height: 480px;
+
+        }
+
+        .about-us .about-second {
+            width: 100%;
+            height: auto;
+ 
+            flex-direction: column;
+            padding: 20px;
+
+        }
+
+        .inner-second {
+            width: 100%;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        .inner-second p {
+            text-align: left;
+            font: 20px;font-family: 'Slabo 27px', serif;
+            margin-left: 10px;
+        }
+           
+            
+
+        .about-us .about-second {
+            width: 100%;
+            height: auto;
+ 
+            flex-direction: column;
+            padding: 20px;
+
+        }
+
+        .inner-second {
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        
+            
+        }
+        @media screen and (max-width:440px) {
+            .about-us {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        .about-us .about-first {
+            width: 90%;
+            height: auto;
+            margin: auto auto;
+            text-align: center;
+            display: grid;
+            place-items: center;
+        }
+
+        .about-first img {
+            background-color: #f0eded;
+            background-blend-mode: darken;
+            width: 100%;
+            
+            height: 480px;
+            
+
+        }
+
+        .about-us .about-second {
+           
+            height: auto;
+ 
+            flex-direction: column;
+            
+
+        }
+
+        .inner-second {
+            width: 80vw;
+           
+            text-align: center;
+           
+        }
+
+        .inner-second h1 {
+            text-align: left;
+            font-weight: 400;
+            margin: 10px;
+        }
+
+        .inner-second p {
+            text-align: left;
+            font: 20px;font-family: 'Slabo 27px', serif;
+            margin-left: 10px;
+        }
+           
+            
+        }
+        </style>
+        </head>
+<body>
+    <nav>
+        <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">About me</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="contact.html">Contect us</a></li>
+        </ul>
+    </nav>
+    <h1 class="service-header about">about me</h1>
+    <div class="about-us">
+        <div class="about-first">
+            <img src="https://images.all-free-download.com/images/graphicthumb/media_web_icons_6814202.jpg"
+                alt="imageformgoogle">
+        </div>
+        <div class="about-second">
+            <div class="inner-second">
+                <h1>Video Productions</h1>
+                <p>We'll record high quality videos that blends well with your brand persona</p>
+            </div>
+            <div class="inner-second">
+                <h1> Content Research</h1>
+                <p>We'll record high quality videos that blends well with your brand persona</p>
+            </div>
+            <div class="inner-second">
+                <h1>Content Research</h1>
+                <p>We'll record high quality videos that blends well with your brand persona</p>
+            </div>
+            <div class="inner-second">
+                <h1>Graphic Designing</h1>
+                <p>We'll record high quality videos that blends well with your brand persona</p>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const navtoggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.links');
+        navtoggle.addEventListener('click', function () {
+            if (links.classList.contains('navlinks')) {
+                links.classList.remove('navlinks')
+            } else {
+                links.classList.add('navlinks')
+            }
+        })
+    </script>
+</body>
+</html>
