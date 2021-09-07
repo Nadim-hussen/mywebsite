@@ -112,6 +112,14 @@
             color: #164d91;
 
         }
+        .btn-form {
+            font-size: 1.4rem;
+            padding: 5px;
+            margin: 0 auto;
+            background: #185696;
+            border-radius: 12px;
+            color: #0a0909;
+        }
 
         /* contact section ends here  */
         @media screen and (max-width:1263px) {
@@ -176,7 +184,15 @@
                 box-sizing: border-box;
             }
 
-
+            .btn-form {
+                font-size: 1.1rem;
+                padding: 5px;
+                margin: 0 auto;
+                background: #185696;
+                border-radius: 12px;
+                color: #0a0909;
+            }
+        
 
             .innerContact label {
                 width: 100%;
@@ -208,20 +224,21 @@
     <div class="contact">
         <div class="innerContact">
             <label for="Fname">FirstName</label>
-            <input type="text" name="Fname" class="inputField">
+            <input type="text" id="fname" name="Fname" class="inputField">
         </div>
         <div class="innerContact">
             <label for="Lname">LastName &nbsp;</label>
-            <input type="text" name="Lname" class="inputField">
+            <input type="text" id="lname" name="Lname" class="inputField">
         </div>
         <div class="innerContact">
             <label for="Email">Email&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
-            <input type="email" name="Email" class="inputField">
+            <input type="email" id="email" name="Email" class="inputField">
         </div>
         <div class="innerContact">
             <label for="mobile">mobile&nbsp; &nbsp; &nbsp; </label>
-            <input type="text" name="mobile" class="inputField">
+            <input type="text" id="mobile" name="mobile" class="inputField">
         </div>
+        <button type="submit" id="form-btn" class="btn-form">submit form</button>
     </div>
     <br><br> <br><br> <br><br>
     <script>
@@ -232,6 +249,28 @@
                 links.classList.remove('navlinks')
             } else {
                 links.classList.add('navlinks')
+            }
+        })
+        // navbar end here 
+        let fname = document.getElementById('fname')
+        let lname = document.getElementById('lname')
+        let email = document.getElementById('email')
+        let mobile = document.getElementById('mobile')
+        let formbtn = document.getElementById('form-btn').addEventListener('click',function(e){
+            let fvalue = fname.value;
+            let lvalue = lname.value;
+            let evalue = email.value;
+            let mvalue =mobile.value;
+            e.preventDefault();
+            // console.log(`${fvalue} ${lvalue} ${evalue} ${mvalue}`)
+            if(fvalue != '' && lvalue != '' && evalue != '' && mvalue != '' ){
+                alert(`your name fullname is ${fvalue} ${lvalue}. your email address is ${evalue}. your mobile number is ${mvalue}`)
+                fname.value = null;
+                lname.value = null;
+                email.value = null;
+                mobile.value = null;
+            }else{
+                alert('you have to filled all the input field')
             }
         })
     </script>
