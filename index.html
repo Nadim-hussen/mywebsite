@@ -238,6 +238,11 @@
             color: #164d91;
 
         }
+        .btn-form{
+            font-size: 1.4rem;
+            padding: 5px;
+            margin: 0 auto;
+        }
 
         /* contact section ends here  */
         /* about us is started  */
@@ -889,20 +894,21 @@
     <div class="contact">
         <div class="innerContact">
             <label for="Fname">FirstName</label>
-            <input type="text" name="Fname" class="inputField">
+            <input type="text" name="Fname" id="fname" class="inputField">
         </div>
         <div class="innerContact">
             <label for="Lname">LastName &nbsp;</label>
-            <input type="text" name="Lname" class="inputField">
+            <input type="text" name="Lname" id="lname" class="inputField">
         </div>
         <div class="innerContact">
             <label for="Email">Email&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
-            <input type="email" name="Email" class="inputField">
+            <input type="email" name="Email" id="email" class="inputField">
         </div>
         <div class="innerContact">
             <label for="mobile">mobile&nbsp; &nbsp; &nbsp; </label>
-            <input type="text" name="mobile" class="inputField">
+            <input type="text" name="mobile" id="mobile" class="inputField">
         </div>
+        <button class="btn-form">submit form</button>
     </div>
     <!-- about section start here  -->
     <h1 class="service-header about">about me</h1>
@@ -935,6 +941,7 @@
 
     <br><br> <br><br> <br><br>
     <script>
+        let fname = document.getElementById('fname').value
         const navtoggle = document.querySelector('.nav-toggle');
         const links = document.querySelector('.links');
         navtoggle.addEventListener('click', function () {
