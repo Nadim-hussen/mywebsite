@@ -238,6 +238,9 @@
             color: #164d91;
 
         }
+        .innerContact input:focus {
+            border-radius: 0px;
+        }
 
         .btn-form {
             font-size: 1.4rem;
@@ -935,6 +938,7 @@
         </div>
         <button type="submit" id="form-btn" class="btn-form">submit form</button>
     </div>
+    <div id="result"></div>
     <!-- about section start here  -->
     <h1 class="service-header about">about me</h1>
     <div class="about-us">
@@ -976,27 +980,52 @@
                 links.classList.add('navlinks')
             }
         })
-        // navbar ends here
+        // navbar ends here 
+
+        // /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+        let emailvalue = /^[a-zA-Z0-9._-]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/g;
+        let mobilevalue = /(\+88)?-?01[7836]\d{8}$/g;
+
         let fname = document.getElementById('fname')
         let lname = document.getElementById('lname')
         let email = document.getElementById('email')
         let mobile = document.getElementById('mobile')
-        let formbtn = document.getElementById('form-btn').addEventListener('click',function(e){
+        let result = document.getElementById('result')
+
+        let formbtn = document.getElementById('form-btn').addEventListener('click', function (e) {
+            e.preventDefault();
             let fvalue = fname.value;
             let lvalue = lname.value;
             let evalue = email.value;
-            let mvalue =mobile.value;
-            e.preventDefault();
+            let mvalue = mobile.value;
             // console.log(`${fvalue} ${lvalue} ${evalue} ${mvalue}`)
-            if(fvalue != '' && lvalue != '' && evalue != '' && mvalue != '' ){
-                alert(`your name fullname is ${fvalue} ${lvalue}. your email address is ${evalue}. your mobile number is ${mvalue}`)
-                fname.value = null;
-                lname.value = null;
-                email.value = null;
-                mobile.value = null;
+            if(fvalue === '' ){
+                result.innerText = 'plz inset firstname properly'
+            }else if(lvalue === ''){
+                result.innerText = 'plz inset lastname properly'
+            } 
+            else if (!emailvalue.test(evalue)) {
+                result.innerText = 'check you inserted email properly'
+
+            } 
+           else if (!mobilevalue.test(mvalue) || !mvalue.length == 11) {
+            result.innerText = 'check you have inserted mobile number properly.It\'s only valid for bangladesh.plz enter 11 digit'
+               
             }else{
-                alert('you have to filled all the input field')
+                
+                result.innerText = 'thank for your identity'
+                fname.value = null
+                lname.value =null
+                email.value= null
+                mobile.value = null
+               setTimeout(()=>{
+                   result.innerText = ''
+               },3000)
+            
             }
+            
+            
+            
         })
     </script>
 </body>
