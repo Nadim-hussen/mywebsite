@@ -112,10 +112,12 @@
             border-radius: 21px;
             align-self: center;
         }
-        .learn-more{
+
+        .learn-more {
             color: #d2d6d3;
             text-decoration: none;
         }
+
         .fa-arrow-right {
             color: aqua;
             font-size: 1.3rem;
@@ -241,6 +243,7 @@
             color: #164d91;
 
         }
+
         .innerContact input:focus {
             border-radius: 0px;
         }
@@ -253,7 +256,8 @@
             border-radius: 12px;
             color: #0a0909;
         }
-        .success{
+
+        .success {
             text-align: center;
             font-size: 20px;
             background-color: #33ce55;
@@ -262,10 +266,11 @@
             width: 80vw;
             margin: 15px auto;
         }
-        .danger{
+
+        .danger {
             text-align: center;
             font-size: 20px;
-            background-color:#ff0000;
+            background-color: #ff0000;
             color: #fff;
             padding: 10px;
             width: 80vw;
@@ -877,7 +882,8 @@
             <div class="left-section">
                 <h1>Creating content that captures attention</h1>
                 <h3>We help brands grow by unleashing the potential of social media</h3>
-                <button class="left-section-btn"><a class='learn-more' href="service.html">Learn more<i class="fas fa-arrow-right fa-9x"></a></i></button>
+                <button class="left-section-btn"><a class='learn-more' href="service.html">Learn more<i
+                            class="fas fa-arrow-right fa-9x"></a></i></button>
             </div>
             <div class="right-section">
                 <div class="info">
@@ -991,7 +997,7 @@
 
     <br><br> <br><br> <br><br>
     <script>
-        
+
         const navtoggle = document.querySelector('.nav-toggle');
         const links = document.querySelector('.links');
         navtoggle.addEventListener('click', function () {
@@ -1020,39 +1026,55 @@
             let evalue = email.value;
             let mvalue = mobile.value;
             // console.log(`${fvalue} ${lvalue} ${evalue} ${mvalue}`)
-            if(fvalue === '' ){
+            if (fvalue === '') {
                 result.innerText = 'plz inset firstname properly'
                 result.classList.add('danger');
-            }else if(lvalue === ''){
+                setTimeout(() => {
+                    result.innerText = '';
+                    result.classList.remove('danger');
+                }, 3000)
+            } else if (lvalue === '') {
                 result.innerText = 'plz inset lastname properly'
                 result.classList.add('danger');
-            } 
+                setTimeout(() => {
+                    result.innerText = '';
+                    result.classList.remove('danger');
+                }, 3000)
+            }
             else if (!emailvalue.test(evalue)) {
                 result.innerText = 'check you inserted email properly'
                 result.classList.add('danger');
+                setTimeout(() => {
+                    result.innerText = '';
+                    result.classList.remove('danger');
+                }, 3000)
 
-            } 
-           else if (!mobilevalue.test(mvalue) || !mvalue.length == 11) {
-            result.innerText = 'check you have inserted mobile number properly.It\'s only valid for bangladesh.plz enter 11 digit'
-            result.classList.add('danger');
-            }else{
-                
+            }
+            else if (!mobilevalue.test(mvalue) || !mvalue.length == 11) {
+                result.innerText = 'check you have inserted mobile number properly.It\'s only valid for bangladesh.plz enter 11 digit'
+                result.classList.add('danger');
+                setTimeout(() => {
+                    result.innerText = '';
+                    result.classList.remove('danger');
+                }, 3000)
+            } else {
+
                 result.innerText = 'thank for your identity'
                 result.classList.add('success');
                 result.classList.remove('danger')
                 fname.value = null
-                lname.value =null
-                email.value= null
+                lname.value = null
+                email.value = null
                 mobile.value = null
-               setTimeout(()=>{
-                   result.innerText = '';
-                   result.classList.remove('success');
-               },3000)
-            
+                setTimeout(() => {
+                    result.innerText = '';
+                    result.classList.remove('success');
+                }, 3000)
+
             }
-            
-            
-            
+
+
+
         })
     </script>
 </body>
