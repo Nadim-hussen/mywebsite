@@ -27,6 +27,44 @@
 
         }
 
+        /* adding preloader in website  */
+     
+        
+
+        #loader {
+            margin: 0 auto;
+
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 500px;
+            height: 500px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         .header-section {
 
             background-color: #edf0ed;
@@ -861,7 +899,8 @@
 
 </head>
 
-<body>
+<body onload="myloader()">
+    <div id="loader"></div>
     <div class="header-section">
         <!-- navbar start -->
         <nav>
@@ -894,6 +933,9 @@
         </div>
     </div>
     <!-- header section ends -->
+    
+        
+    </div>
     <h1 class="service-header">service section</h1>
     <div class="services">
 
@@ -1032,7 +1074,7 @@
                 setTimeout(() => {
                     result.innerText = '';
                     result.classList.remove('danger');
-                },5000)
+                }, 5000)
             } else if (lvalue === '') {
                 result.innerText = 'plz inset lastname properly'
                 result.classList.add('danger');
@@ -1047,7 +1089,7 @@
                 setTimeout(() => {
                     result.innerText = '';
                     result.classList.remove('danger');
-                },5000)
+                }, 5000)
 
             }
             else if (!mobilevalue.test(mvalue) || !mvalue.length == 11) {
@@ -1069,14 +1111,22 @@
                 setTimeout(() => {
                     result.innerText = '';
                     result.classList.remove('success');
-                },5000)
+                }, 5000)
 
             }
 
 
 
         })
-    </script>
+     let loader = document.getElementById('loader');
+      
+    
+      
+        function myloader(){
+           loader.style.display = 'none';
+     }
+
+    </script>   
 </body>
 
 </html>
